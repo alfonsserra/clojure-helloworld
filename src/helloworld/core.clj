@@ -1,9 +1,14 @@
-(ns helloworld.core)
+(ns helloworld.core
+  (:require [clojure.string :as str]))
+
+(defn startsWithVowel?
+  [name]
+  (contains? (set "AEIOU") (first name)))
 
 (defn commasepared
   "Separate with commas"
   [names]
-  (clojure.string/join ", " (map clojure.string/capitalize names)))
+  (str/join ", " (filter startsWithVowel? (map str/capitalize names))))
 
 (defn greet
   "Say hello"
@@ -13,5 +18,5 @@
 (defn -main
   "Main"
   []
-  (let [x ["maria" "peter" "josh"]]
+  (let [x ["maria" "adele" "peter" "eva" "josh" "andy" "anthony"]]
     (greet x)))
