@@ -1,6 +1,11 @@
 (ns helloworld.core)
 
+(defn greet
+  "Say hello to a person"
+  [name]
+  (println "Hello," name))
+
 (defn -main
-  "I can say Hello."
+  "Main"
   []
-  (println "Hello, World!"))
+  (greet "Maria"))
