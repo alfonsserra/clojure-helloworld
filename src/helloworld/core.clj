@@ -2,6 +2,7 @@
   (:require [clojure.string :as str]))
 
 (defn starts-with-vowel?
+  "Check if starts with a vowel"
   [name]
   (contains? (set "AEIOU") (first name)))
 
