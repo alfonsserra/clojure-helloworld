@@ -1,8 +1,9 @@
 (ns helloworld.core)
 
 (defn commasepared
+  "Separate with commas"
   [names]
-  (clojure.string/join ", " (map #(str % ) names)))
+  (clojure.string/join ", " (map clojure.string/capitalize names)))
 
 (defn greet
   "Say hello"
@@ -12,4 +13,5 @@
 (defn -main
   "Main"
   []
-  (greet ["Maria" "Peter" "Josh"]))
+  (let [x ["maria" "peter" "josh"]]
+    (greet x)))
