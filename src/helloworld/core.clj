@@ -7,9 +7,9 @@
   (contains? (set "AEIOU") (first name)))
 
 (defn comma-separed
-  "Separate with commas"
+  "Separate names with commas"
   [names]
-  (str/join ", " (filter starts-with-vowel? (map str/capitalize names))))
+  (str/join ", " (filter starts-with-vowel? (map str/capitalize (map str/lower-case names)))))
 
 (defn greet
   "Say hello"
